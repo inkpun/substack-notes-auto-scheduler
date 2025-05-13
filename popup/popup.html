@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Substack Notes Auto Scheduler</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h2>Schedule a Substack Note</h2>
+    <form id="schedule-form">
+      <label for="note-content">Note Content:</label><br />
+      <textarea
+        id="note-content"
+        rows="6"
+        cols="40"
+        placeholder="Write your note here..."
+        required
+      ></textarea
+      ><br />
+
+      <label for="schedule-time">Schedule Time:</label><br />
+      <input type="datetime-local" id="schedule-time" required /><br />
+
+      <button type="submit">Schedule Note</button>
+    </form>
+
+    <h3>Scheduled Notes</h3>
+    <ul id="scheduled-notes-list"></ul>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
