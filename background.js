@@ -40,10 +40,18 @@ async function checkAndPostNotes() {
         // Log before sending message
         console.log(`Sending postNote message for note id=${note.id}`);
 
-        // Send note content to content script
+        // inside your loop over due notes, replace sendMessage call with:
+        const plainText = note.content.content
+          .map((block) => block.content.map((t) => t.text).join(""))
+          .join("\n");
+
         const postResult = await browser.tabs.sendMessage(tab.id, {
           action: "postNote",
-          content: note.content,
+          content: {
+            bodyJson: note.content, // already uses bulletList, listItem, etc.
+            replyMinimumRole: "everyone",
+            comment: plainText,
+          },
         });
 
         if (postResult.success) {

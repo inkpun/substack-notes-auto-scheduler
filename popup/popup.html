@@ -7,16 +7,25 @@
   </head>
   <body>
     <h2>Schedule a Substack Note</h2>
-    <form id="schedule-form">
-      <label for="note-content">Note Content:</label><br />
-      <textarea
-        id="note-content"
-        rows="6"
-        cols="40"
-        placeholder="Write your note here..."
-        required
-      ></textarea
-      ><br />
+
+    <form id="schedule-form" novalidate>
+      <label for="rt-editor">Note Content:</label><br />
+
+      <div id="rt-toolbar">
+        <button type="button" data-cmd="bold"><b>B</b></button>
+        <button type="button" data-cmd="italic"><i>I</i></button>
+        <button type="button" data-cmd="strikeThrough">S̶</button>
+        <button type="button" data-cmd="insertUnorderedList">• List</button>
+        <button type="button" data-cmd="insertOrderedList">1. List</button>
+        <button type="button" id="link-btn">🔗</button>
+      </div>
+
+      <div
+        id="rt-editor"
+        contenteditable="true"
+        placeholder="Write your note here…"
+      ></div>
+      <br />
 
       <label for="schedule-time">Schedule Time:</label><br />
       <input type="datetime-local" id="schedule-time" required /><br />

@@ -32,3 +32,27 @@ li {
 button {
   cursor: pointer;
 }
+#rt-toolbar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+#rt-toolbar button {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+#rt-toolbar button:hover {
+  background: #eaeaea;
+}
+#rt-editor {
+  min-height: 120px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  overflow-y: auto;
+}
+#rt-editor:empty:before {
+  content: attr(placeholder);
+  color: #888;
+}
